@@ -1,0 +1,230 @@
+/* ==================================== */
+/* CSS Khusus untuk Halaman Components */
+/* File ini dimuat setelah style.css, jadi bisa menimpa atau menambahkan gaya */
+/* ==================================== */
+
+/* Container khusus untuk halaman components agar tidak bertabrakan dengan .container di style.css */
+.container-comp {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1000px; /* Sedikit lebih kecil dari main index.html */
+    margin: 20px auto; /* Memberi sedikit margin di luar container */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Bayangan yang lebih menonjol */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Header untuk halaman components */
+.comp-header {
+    background-color: #34495e; /* Warna biru-keabuan */
+    color: #ecf0f1;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #f39c12; /* Garis bawah oranye */
+}
+
+.comp-header h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.comp-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.comp-header nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.comp-header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content untuk halaman components */
+.comp-main {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row; /* Konten berdampingan */
+    gap: 2rem;
+    flex-wrap: wrap; /* Izinkan wrapping */
+}
+
+/* Article di halaman components */
+.comp-article {
+    flex: 2; /* Mengambil porsi lebih besar */
+    min-width: 320px;
+    background-color: #ffffff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.comp-article h2 {
+    color: #34495e;
+    font-size: 2em;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 0.5rem;
+}
+
+.comp-article p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Gambar di dalam artikel */
+.comp-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: block; /* Agar gambar tidak memiliki ruang kosong di bawahnya */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Styling untuk item makanan/wisata */
+.food-item, .tourism-spot {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.food-item img, .tourism-spot img {
+    width: 100%;
+    height: 200px; /* Tinggi tetap untuk gambar item */
+    object-fit: cover; /* Agar gambar mengisi area tanpa terdistorsi */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.food-item h3, .tourism-spot h3 {
+    color: #f39c12;
+    font-size: 1.5em;
+    margin-bottom: 0.8rem;
+}
+
+
+/* Aside di halaman components */
+.comp-aside {
+    flex: 1; /* Mengambil porsi lebih kecil */
+    min-width: 250px;
+    background-color: #ecf0f1; /* Warna latar belakang aside */
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.comp-aside h3 {
+    color: #34495e;
+    font-size: 1.6em;
+    margin-bottom: 0.8rem;
+}
+
+.comp-aside ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.comp-aside ul li {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Footer untuk halaman components */
+.comp-footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: auto;
+    border-top: 4px solid #f39c12;
+    font-size: 0.85em;
+}
+
+/* ==================================== */
+/* Responsiveness untuk Halaman Components */
+/* ==================================== */
+@media (max-width: 768px) {
+    .container-comp {
+        margin: 10px;
+        border-radius: 0;
+    }
+
+    .comp-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .comp-header h1 {
+        font-size: 1.8em;
+        margin-bottom: 0.8rem;
+    }
+
+    .comp-header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .comp-header nav a {
+        display: block;
+        padding: 0.6rem 0;
+        text-align: center;
+    }
+
+    .comp-main {
+        flex-direction: column; /* Article dan Aside bertumpuk */
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .comp-article, .comp-aside {
+        flex: auto; /* Biarkan item mengambil ukuran otomatis */
+        width: 100%; /* Memastikan item mengisi lebar penuh */
+    }
+}
+
+@media (max-width: 480px) {
+    .comp-header h1 {
+        font-size: 1.5em;
+    }
+
+    .comp-main {
+        padding: 1rem;
+    }
+
+    .comp-article h2 {
+        font-size: 1.8em;
+    }
+
+    .comp-aside h3 {
+        font-size: 1.4em;
+    }
+}
